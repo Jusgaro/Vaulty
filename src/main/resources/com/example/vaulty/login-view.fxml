@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" spacing="12"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.vaulty.LoginController">
+
+    <Label text="Vaulty" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="250"/>
+
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="250"/>
+
+    <Button text="Login in" onAction="#onLoginClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+    <Button text="Register" onAction="#onRegisterClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+
+</VBox>
+

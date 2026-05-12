@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" spacing="12"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.vaulty.RegisterController"
+      style="-fx-padding: 40; -fx-min-width: 350;">
+
+    <Label text="Registrácia" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="usernameField" promptText="Používateľské meno" maxWidth="250"/>
+
+    <PasswordField fx:id="passwordField" promptText="Heslo" maxWidth="250"/>
+
+    <PasswordField fx:id="confirmPasswordField" promptText="Potvrď heslo" maxWidth="250"/>
+
+    <Button text="Registrovať sa" onAction="#onRegisterClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+
+    <Button text="Späť na prihlásenie" onAction="#onBackClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+
+    <Label fx:id="messageLabel" text=""/>
+
+</VBox>

@@ -1,0 +1,57 @@
+.table-view {
+    -fx-background-color: #EDE0CC;
+}
+
+.table-view .column-header {
+    -fx-background-color: #D9C9B0;
+    -fx-text-fill: #6b5040;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #D9C9B0;
+}
+
+.table-row-cell {
+    -fx-background-color: #EDE0CC;
+    -fx-border-color: #D9C9B0;
+    -fx-text-fill: #6b5040;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #E5D5BC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #C4A882;
+    -fx-text-fill: #4a3728;
+}
+
+.table-view .corner {
+    -fx-background-color: #D9C9B0;
+    -fx-border-color: #D9C9B0;
+}
+
+.scroll-bar {
+    -fx-background-color: #D9C9B0;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #D9C9B0;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #C4A882;
+    -fx-background-radius: 4;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #D9C9B0;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
