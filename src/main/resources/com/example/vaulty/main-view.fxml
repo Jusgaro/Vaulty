@@ -10,34 +10,37 @@
       fx:controller="com.example.vaulty.MainController"
       style="-fx-min-width: 800; -fx-min-height: 500; -fx-background-color: #EDE0CC;">
 
+    <!-- Sidebar Menu -->
     <VBox style="-fx-background-color: #D9C9B0; -fx-min-width: 220; -fx-padding: 30 20 20 20; -fx-spacing: 8;">
 
         <Label text="🔐 Vaulty"
                style="-fx-text-fill: #6b5040; -fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 0 0 20 0;"/>
 
-        <Button fx:id="btnPassword" text="🗝  Heslá" onAction="#showPassword"
+        <!-- Sidebar Buttons -->
+        <Button fx:id="btnPassword" text="🗝  Passwords" onAction="#showPassword"
                 maxWidth="Infinity"
                 style="-fx-background-color: #C4A882; -fx-text-fill: #4a3728; -fx-padding: 10 16; -fx-background-radius: 8; -fx-cursor: hand; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;"/>
 
 
-        <Button fx:id="btnAddPassword" text="➕  Pridať heslo" onAction="#showAddPassword"
+        <Button fx:id="btnAddPassword" text="➕  Add Password" onAction="#showAddPassword"
                 maxWidth="Infinity"
                 style="-fx-background-color: transparent; -fx-text-fill: #7a6352; -fx-padding: 10 16; -fx-background-radius: 8; -fx-cursor: hand; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;"/>
 
         <Region VBox.vgrow="ALWAYS"/>
 
-        <Button text="🚪  Odhlásiť" onAction="#onLogout"
+        <Button text="🚪  Logout" onAction="#onLogout"
                 maxWidth="Infinity"
                 style="-fx-background-color: transparent; -fx-text-fill: #9e6b5a; -fx-padding: 10 16; -fx-background-radius: 8; -fx-cursor: hand;"/>
 
     </VBox>
 
+    <!-- Main Content Area -->
     <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS"
                style="-fx-background-color: #EDE0CC; -fx-padding: 40;">
         <VBox spacing="16">
-            <Label text="Vitaj späť! 👋"
+            <Label text="Welcome back! 👋"
                    style="-fx-text-fill: #6b5040; -fx-font-size: 26px; -fx-font-weight: bold;"/>
-            <Label text="Vyber možnosť z menu vľavo."
+            <Label text="Select an option from the menu on the left."
                    style="-fx-text-fill: #9e8572; -fx-font-size: 14px;"/>
         </VBox>
     </StackPane>
