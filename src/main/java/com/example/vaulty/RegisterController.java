@@ -22,24 +22,28 @@ public class RegisterController {
         String password = passwordField.getText();
         String confirm = confirmPasswordField.getText();
 
+        // Check for empty fields
         if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
-            messageLabel.setText("Vyplň všetky polia!");
+            messageLabel.setText("Please fill in all fields!");
             return;
         }
 
+        // Check if passwords match
         if (!password.equals(confirm)) {
-            messageLabel.setText("Heslá sa nezhodujú!");
+            messageLabel.setText("Passwords do not match!");
             return;
         }
 
+        // Check if username is taken
         if (UserStorage.userExists(username)) {
-            messageLabel.setText("Používateľ už existuje!");
+            messageLabel.setText("User already exists!");
             return;
         }
 
+        // Save user and show success message
         UserStorage.saveUser(username, password);
         messageLabel.setStyle("-fx-text-fill: green;");
-        messageLabel.setText("Účet vytvorený! Môžeš sa prihlásiť.");
+        messageLabel.setText("Account created! You can now log in.");
     }
 
     @FXML
