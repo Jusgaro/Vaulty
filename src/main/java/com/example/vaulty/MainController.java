@@ -54,25 +54,29 @@ public class MainController {
         table.setFixedCellSize(40);
         table.setItems(passwords);
 
-        TableColumn<PasswordEntry, String> nameCol = new TableColumn<>("Názov");
+        // Column: Name
+        TableColumn<PasswordEntry, String> nameCol = new TableColumn<>("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         nameCol.setPrefWidth(150);
         nameCol.setStyle("-fx-alignment: CENTER-LEFT; -fx-font-size: 13px;");
 
-        TableColumn<PasswordEntry, String> usernameCol = new TableColumn<>("Používateľ");
+        // Column: User/Username
+        TableColumn<PasswordEntry, String> usernameCol = new TableColumn<>("Username");
         usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
         usernameCol.setPrefWidth(150);
         usernameCol.setStyle("-fx-alignment: CENTER-LEFT; -fx-font-size: 13px;");
 
-        TableColumn<PasswordEntry, String> passwordCol = new TableColumn<>("Heslo");
+        // Column: Password
+        TableColumn<PasswordEntry, String> passwordCol = new TableColumn<>("Password");
         passwordCol.setCellValueFactory(new PropertyValueFactory<>("password"));
         passwordCol.setPrefWidth(150);
         passwordCol.setStyle("-fx-alignment: CENTER-LEFT; -fx-font-size: 13px;");
 
+        // Column: Delete Action
         TableColumn<PasswordEntry, Void> deleteCol = new TableColumn<>("");
         deleteCol.setPrefWidth(80);
         deleteCol.setCellFactory(col -> new TableCell<PasswordEntry, Void>() {
-            private final Button deleteBtn = new Button("Vymazať");
+            private final Button deleteBtn = new Button("Delete");
             {
                 deleteBtn.setOnAction(e -> {
                     PasswordEntry entry = getTableView().getItems().get(getIndex());
@@ -104,44 +108,44 @@ public class MainController {
         VBox form = new VBox(14);
         form.setStyle("-fx-padding: 30; -fx-max-width: 400;");
 
-        Label title = new Label("Pridať heslo");
+        Label title = new Label("Add Password");
         title.setStyle("-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #6b5040; -fx-padding: 0 0 10 0;");
 
         TextField nameField = new TextField();
-        nameField.setPromptText("Názov (napr. Gmail)");
+        nameField.setPromptText("Name (e.g., Gmail)");
         nameField.setMaxWidth(300);
         nameField.setStyle("-fx-background-color: #E5D5BC; -fx-background-radius: 8; -fx-border-color: #C4A882; -fx-border-radius: 8; -fx-padding: 10; -fx-font-size: 13px;");
 
         TextField usernameField = new TextField();
-        usernameField.setPromptText("Používateľské meno");
+        usernameField.setPromptText("Username");
         usernameField.setMaxWidth(300);
         usernameField.setStyle("-fx-background-color: #E5D5BC; -fx-background-radius: 8; -fx-border-color: #C4A882; -fx-border-radius: 8; -fx-padding: 10; -fx-font-size: 13px;");
 
         PasswordField passwordField = new PasswordField();
-        passwordField.setPromptText("Heslo");
+        passwordField.setPromptText("Password");
         passwordField.setMaxWidth(300);
         passwordField.setStyle("-fx-background-color: #E5D5BC; -fx-background-radius: 8; -fx-border-color: #C4A882; -fx-border-radius: 8; -fx-padding: 10; -fx-font-size: 13px;");
 
         Label messageLabel = new Label();
         messageLabel.setStyle("-fx-font-size: 13px;");
 
-        Button saveBtn = new Button("Uložiť");
+        Button saveBtn = new Button("Save");
         saveBtn.setStyle("-fx-background-color: #C4A882; -fx-text-fill: #4a3728; -fx-font-size: 13px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand;");
         saveBtn.setOnAction(e -> {
             String name = nameField.getText();
-            String username = usernameField.getText();
-            String password = passwordField.getText();
+            String user = usernameField.getText();
+            String pass = passwordField.getText();
 
-            if (name.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            if (name.isEmpty() || user.isEmpty() || pass.isEmpty()) {
                 messageLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: red;");
-                messageLabel.setText("Vyplň všetky polia!");
+                messageLabel.setText("Please fill in all fields!");
                 return;
             }
 
-            passwords.add(new PasswordEntry(name, username, password));
+            passwords.add(new PasswordEntry(name, user, pass));
             PasswordStorage.save(new ArrayList<>(passwords), currentUser, masterPassword);
             messageLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: green;");
-            messageLabel.setText("Heslo uložené!");
+            messageLabel.setText("Password saved!");
             nameField.clear();
             usernameField.clear();
             passwordField.clear();
