@@ -6,24 +6,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" spacing="12"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.vaulty.RegisterController"
       style="-fx-padding: 40; -fx-min-width: 350;">
 
-    <Label text="Registrácia" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+    <!-- Registration Header -->
+    <Label text="Registration" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
 
-    <TextField fx:id="usernameField" promptText="Používateľské meno" maxWidth="250"/>
+    <!-- Input Fields -->
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="250"/>
 
-    <PasswordField fx:id="passwordField" promptText="Heslo" maxWidth="250"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="250"/>
 
-    <PasswordField fx:id="confirmPasswordField" promptText="Potvrď heslo" maxWidth="250"/>
+    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" maxWidth="250"/>
 
-    <Button text="Registrovať sa" onAction="#onRegisterClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+    <!-- Action Buttons -->
+    <Button text="Register" onAction="#onRegisterClick" maxWidth="250" style="-fx-pref-width: 250;"/>
 
-    <Button text="Späť na prihlásenie" onAction="#onBackClick" maxWidth="250" style="-fx-pref-width: 250;"/>
+    <Button text="Back to Login" onAction="#onBackClick" maxWidth="250" style="-fx-pref-width: 250;"/>
 
+    <!-- Feedback Message -->
     <Label fx:id="messageLabel" text=""/>
 
 </VBox>
